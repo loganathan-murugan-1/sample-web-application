@@ -8,6 +8,7 @@ pipeline{
         }
 
 stages{
+    
       stage('Quality Gate Statuc Check'){
           steps{
               script{
@@ -21,23 +22,10 @@ stages{
               }
                       }
               sh "mvn clean install"
+                  
               }
             }
           }
+    
         }  
-      }
-
-
-
-      stage('build')
-        {
-      steps{
-          script{
-           sh 'mvn clean deploy'
-                }
-            }
-         }
-
-
-       }
 }
